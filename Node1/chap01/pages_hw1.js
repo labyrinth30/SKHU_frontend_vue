@@ -8,3 +8,8 @@
 // 위와 같이 학생수와 페이지 크기가 각각 주어졌을 때,
 // 페이지 수를 계산해서 출력하는 코드를 구현하시오.
 
+const studentCount = 31;
+const pageSize = 10;
+
+const pageCount = Math.ceil(studentCount / pageSize);
+console.log(pageCount);
