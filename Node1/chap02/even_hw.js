@@ -11,9 +11,9 @@ for(let i=0; i<100; i++){
     arr.push(a);
 }
 
-arr = arr.filter(n => n %2 !==0);
+// arr = arr.filter(n => n %2 !==0);
 
-// arr = arr.filter(function(number){
-//     return number % 2 !==0;
-// });
+arr = arr.filter(function(number){
+    return number % 2 !==0;
+});
 console.log(arr);
