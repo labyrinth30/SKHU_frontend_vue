@@ -14,3 +14,14 @@
 // guide.hwp
 // substring1.js
 // homework.docx
+
+let a = ["c:/temp/guide.hwp",
+ "c:/pj/frontend/chap05/substring1.js",
+ "homework.docx"]
+ for(var i=0; i<a.length; ++i){
+    let file = a[i];
+    let fileExtension = file.split('.').pop();
+    let fileName = file.split('/').pop();
+    console.log(`.${fileExtension}`);
+    console.log(fileName);
+ }
