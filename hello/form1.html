@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    div#app { margin: 20px auto; padding: 20px; width: 300px;
+          border: 1px solid gray; box-shadow: 5px 5px 5px #aaa; }
+    p { font-size: 15pt; color: blue; }
+    select { padding: 5px; font-size: 15pt; width: 150px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+      <h1>select</h1>
+      <p>{{ choice }}</p>
+      <hr />
+      <select v-model="choice">
+        <option>전공을 선택하세요</option>
+        <option>컴퓨터공학</option>
+        <option>소프트웨어공학</option>
+        <option>정보통신공학</option>
+        <option>인공지능공학</option>
+      </select>
+  </div>
+  <script type="text/javascript">
+    let app = {
+      data() {
+        return {        
+          choice: "전공을 선택하세요"
+          
+        };
+      }
+    };
+    Vue.createApp(app).mount("#app");    
+   </script>
+</body>
+</html>
