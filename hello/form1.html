@@ -16,7 +16,7 @@
             font-size: 15pt;
         }
 
-        select {
+        select {    
             padding: 5px;
             font-size: 15pt;
             width: 150px;
@@ -26,7 +26,7 @@
 
 <body>
     <div id="app">
-        <h1>입력양식</h1>
+        <h1>입력양식</h1>
         <input type="text" placeholder="이름을 입력하세요" v-model="name" /></br>
         <label>
             <input type="radio" value="male" v-model="gender" />남자
@@ -36,7 +36,7 @@
         </label>
         </br>
         <select v-model="choice">
-            <option value=" ">전공을 선택하세요</option>
+            <option value="">전공을 선택하세요</option>
             <option value="컴공">컴퓨터공학</option>
             <option value="소프">소프트웨어공학</option>
             <option value="정통">정보통신공학</option>
@@ -63,11 +63,11 @@
             let app = {
                 data() {
                     return {
-                        gender: ' ',
-                        name: ' ',
-                        choice: ' ',
+                        gender: '',
+                        name: '',
+                        choice: '',
                         active: 'false',
-                        value: ' '
+                        value: ''
                     }
                 }
             };
