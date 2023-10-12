@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 400px;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+    div#app div { margin-bottom: 20px; }
+    label { display: block; }
+    input[type=text] { padding: 4px; }
+  </style>
+</head>
+<body>
+  <!-- from 1 to 100 -> 5050 -->
+  <div id="app">
+    <h1>주문</h1>
+    <div>
+      <label>from</label>
+      <input type="text" v-model="quantity" />
+    </div>
+    <div>
+      <label>to</label>
+      <input type="text" v-model="price" />
+    </div>
+    <hr />
+    <div>
+      <label>total</label>
+      <label> v-model="total"</label>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    let app = {
+      data() {
+        return {
+          quantity: 1,
+          price: 150
+        };
+      },
+      computed:  {
+        total : {
+          get() {
+            return this.quantity * this.price;
+          },
+          set(value) {
+            this.quantity = value / this.price;
+          }
+        }
+      }
+    };
+    Vue.createApp(app).mount("#app");
+  </script>
+</body>
+</html>
