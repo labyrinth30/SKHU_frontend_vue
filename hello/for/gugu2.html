@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    div#app { 
+      padding: 30px; 
+      margin: 30px auto; 
+      width: 800px; 
+      border: 1px solid #ccc; 
+      box-shadow: 3px 3px 3px #aaa;  
+    }
+    table { 
+      border-collapse: collapse; 
+      margin: auto; 
+      width: 100%; 
+    }
+    td { 
+      padding: 10px; 
+      border-left: 1px solid black; 
+      border-right: 1px solid black; 
+      text-align: center; 
+      border-top: none; /* 상단 border 제거 */
+      border-bottom: none; /* 하단 border 제거 */
+    }
+    tr:first-child td { 
+      border-top: 1px solid black; /* 첫 번째 행의 상단 border 추가 */
+    }
+    tr:last-child td { 
+      border-bottom: 1px solid black; /* 마지막 행의 하단 border 추가 */
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <table>
+      <tr v-for="col in col_size">
+        <td v-for="row in row_size">
+          {{ row + 1 }} * {{ col }} = {{ (row + 1) * col }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script type="text/javascript">
+    let app = {
+      data() {
+        return {
+          row_size: 9, /* 수정: 9까지 표시하도록 수정 */
+          col_size: 8
+        };
+      }
+    };
+    Vue.createApp(app).mount("#app");
+   </script>
+</body>    
+</html>

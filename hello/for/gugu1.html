@@ -1,0 +1,35 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 800px; 
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa;  }
+    table { border-collapse: collapse; margin: auto; }
+    td { padding: 10px; border: 1px solid black;  text-align: center; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <table>
+      <tr v-for="col in col_size">
+        <td v-for="row in row_size">
+          {{ row +1 }} * {{ col }} = {{ (row + 1) * col }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script type="text/javascript">
+    let app = {
+      data() {
+        return {
+          row_size: 8,
+          col_size: 9
+        };
+      }
+    };
+    Vue.createApp(app).mount("#app");
+   </script>
+</body>    
+</html>
