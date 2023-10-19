@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div#app {
+            padding: 30px;
+            margin: 30px auto;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #aaa;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        td {
+            padding: 5px;
+            border: 1px solid #aaa;
+        }
+
+        tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .name-column {
+            width: 50%;
+        }
+
+        .count-column {
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <h1>test6</h1>
+            <hr/>
+            <tr> 
+                <td class="name-column">name</td>
+                <td class="count-column">count</td>
+                <td></td>
+            </tr>
+            <tr v-for="(animal, index) in animals" v-bind:key="animal.name">
+                <td class="name-column">{{ animal.name }}</td>
+                <td class="count-column">{{ animal.count }}</td> 
+                <td><button type="button" v-on:click="increase(index)">++</button></td> 
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        let app = {
+            data() {
+                return {
+                    animals: [
+                        { name: "고양이", count: 0 },
+                        { name: "강아지", count: 0 },
+                        { name: "닭", count: 0 }
+                    ],
+                };
+            },
+            methods: {
+                increase(index) {
+                    this.animals[index].count++;
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>

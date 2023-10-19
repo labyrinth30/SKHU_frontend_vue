@@ -1,0 +1,88 @@
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div#app {
+            padding: 30px;
+            margin: 30px auto;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #aaa;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 300px;
+        }
+
+        td {
+            padding: 5px;
+            border: 1px solid #aaa;
+        }
+
+        td:nth-child(4) {
+            width: 50px;
+        }
+
+        tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            margin-top: 10px;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <h1>test2</h1>
+            <hr/>
+            <tr> <td>no</td><td>title</td> </tr>
+            <tr v-for="(product,index) in products" v-bind:key="product.no">
+                 <td>{{ product.no }}</td>
+                 <td>{{ product.title }}</td> 
+                </tr>
+        </table>
+        <input type="text" v-model="no" /> <br />
+        <input type="text" v-model="title"  /> <br />
+        <button type="button" v-on:click="add"> 추가</button>
+    </div>
+
+    <script type="text/javascript">
+        let app = {
+            data() {
+                return {
+                    products: [{ no: 1, title: "우유" }],
+                    
+                    no: '',
+                    title: ''
+                };
+            },
+            methods: {
+                add() {
+                    let product = { }; 
+                    product.no = this.no; 
+                    product.title = this.title;
+                    this.products.push(product);
+                    console.log(this.products);
+                    this.no = '';
+                    this.title = '';
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>

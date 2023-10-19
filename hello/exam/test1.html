@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    div#box {
+      margin: 20px auto;
+      padding: 20px;
+      width: 300px;
+      border: 1px solid gray;
+      box-shadow: 5px 5px 5px #aaa;
+    }
+    select {
+      padding: 5px;
+      font-size: 15pt;
+      width: 150px;
+      margin: 10px 0; 
+    }
+    input {
+      margin: 10px 0; 
+    }
+    button {
+        margin-top: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      padding: 5px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="box">
+      <h1>test1</h1>
+      <input type="text" value="value" v-model="value1" /><br />
+      <input type="text" value="value" v-model="value2" /><br />
+      <button v-on:click="multiply">곱하기</button>
+      <button v-on:click="divide">나누기</button>
+      <hr />
+      <span v-text="result"></span> 
+    </div>
+  </div>
+  <script type="text/javascript">
+    let app = {
+      data() {
+        return {
+          value1: 0,
+          value2: 0,
+          result: 0
+        };
+      },
+      methods: {
+        multiply() {
+          this.result = this.value1 * this.value2;
+        },
+        divide() {
+          this.result = this.value1 / this.value2;
+        }
+      }
+    };
+    Vue.createApp(app).mount("#app");
+  </script>
+</body>
+</html>

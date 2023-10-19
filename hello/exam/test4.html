@@ -1,0 +1,51 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 200px; 
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa;  }
+    table { border-collapse: collapse; margin: 5px; }
+    td { padding: 10px; border: 1px solid black;  text-align: center; padding-right: 50px; }
+    select { padding: 5px; font-size: 15pt; width: 100px; }
+  
+    
+  </style>
+</head>
+<body>
+    <div id="app">
+    <h1>test4</h1>
+      <select v-model="number">
+        <option selected>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+      </select>
+    
+    <table>
+      <tr v-for="col in col_size">
+        <td v-for="row in row_size">
+          {{ number}} * {{ col }} = {{ number * col }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script type="text/javascript">
+    let app = {
+      data() {
+        return {
+            number: 2,
+          row_size: 1,
+          col_size: 9
+        };
+      }
+    };
+    Vue.createApp(app).mount("#app");
+   </script>
+</body>    
+</html>
