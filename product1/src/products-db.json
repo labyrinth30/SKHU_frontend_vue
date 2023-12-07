@@ -4,7 +4,7 @@
       "id": 1,
       "title": "우유",
       "price": 100,
-      "category": "음료수"
+      "category": "주류"
     },
     {
       "id": 2,
@@ -23,6 +23,12 @@
       "title": "환타",
       "price": 150,
       "category": "음료수"
+    },
+    {
+      "title": "코카콜라",
+      "price": "400",
+      "category": "음료수",
+      "id": 5
     }
   ]
 }
