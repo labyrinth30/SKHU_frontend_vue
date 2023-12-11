@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "우유",
+      "price": 100,
+      "category": "음료수"
+    },
+    {
+      "id": 2,
+      "title": "조리퐁",
+      "price": 200,
+      "category": "과자"
+    },
+    {
+      "id": 3,
+      "title": "소주",
+      "price": 300,
+      "category": "주류"
+    },
+    {
+      "id": 4,
+      "title": "콜라",
+      "price": 150,
+      "category": "음료수"
+    },
+    {
+      "title": "뽕따",
+      "price": "600",
+      "category": "과자",
+      "id": 5
+    }
+  ]
+}
